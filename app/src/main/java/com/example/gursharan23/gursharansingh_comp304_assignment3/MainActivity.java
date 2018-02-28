@@ -4,7 +4,7 @@ package com.example.gursharan23.gursharansingh_comp304_assignment3;
 Date: February 28th, 2018
 Author: Gursharan Singh
 ID: 300931676
-Description: This is the main activity class that handles the events for the ' main screen '
+Description: This is the main activity class that handles the events for the ' main screen ' activity
 Version: 0.1 - Created the listview item control
 */
 import android.app.ListActivity;
