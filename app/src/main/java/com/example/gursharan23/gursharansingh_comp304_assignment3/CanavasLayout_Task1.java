@@ -3,7 +3,7 @@ package com.example.gursharan23.gursharansingh_comp304_assignment3;
 * Date : February 28, 2018
 * Author : Gursharan Singh
 * Description : This class handles all the events of the canvas layout activity
-* Version : 0.3 - Added  edit text controls for startX and startY
+* Version : 0.4 - Refactored canvas activity class
 * GitHub Info: https://github.com/iamgursharan
  */
 
