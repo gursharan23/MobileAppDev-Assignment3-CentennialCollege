@@ -41,7 +41,7 @@ public class MainActivity extends ListActivity {
         {
             case 0:
                 Toast.makeText(this,"Task 1 selected",Toast.LENGTH_SHORT).show();
-       //         i=new Intent(this,Task1_Activity.class);
+                i=new Intent(this,CanavasLayout_Task1.class);
                 break;
             case 1:
                 Toast.makeText(this,"Task 2 selected",Toast.LENGTH_SHORT).show();
@@ -52,6 +52,6 @@ public class MainActivity extends ListActivity {
       //          i=new Intent(this,Task3_Activity.class);
                 break;
         }
-     //   startActivity(i);
+        startActivity(i);
     }
 }

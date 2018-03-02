@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_padding">10dp</dimen>
+    <dimen name="layout_padding">15dp</dimen>
+    <dimen name="text_padding">30dp</dimen>
     <dimen name="header_font_size">14dp</dimen>
+     <dimen name="button_dimen">30dp</dimen>
 </resources>

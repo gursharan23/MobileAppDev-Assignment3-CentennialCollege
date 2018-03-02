@@ -1,9 +1,26 @@
 <resources>
     <string name="app_name">GursharanSingh_COMP304_Assignment3</string>
+    <!-->Main activity  strings used<-->
     <string name="mainActivityHeader">"Select a task to show the solution"</string>
     <string-array name="tasks">
         <item>Task 1</item>
         <item>Task 2</item>
         <item>Task 3</item>
+    </string-array>
+
+    <!-->Task 1  strings used<-->
+    <string name="spinner_thickness_textview">Line Thickness</string>
+    <string name="line_color_textview">Line color</string>
+    <string name="red_radio_btn">Red</string>
+    <string name="green_radio_btn">Green</string>
+    <string name="yellow_radio_btn">Yellow</string>
+    <string name="keys_textview">Arrow Keys</string>
+    <string name="imageview_description">This imageview is made for canvas use</string>
+    <string-array name="thickness_array">
+        <item>20</item>
+        <item>40</item>
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
     </string-array>
 </resources>

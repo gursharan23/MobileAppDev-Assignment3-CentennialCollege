@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gursharan23.gursharansingh_comp304_assignment3.CanavasLayout_Task1"
+    android:orientation="vertical">
+
+       <LinearLayout
+           android:layout_height="wrap_content"
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:layout_marginLeft="@dimen/layout_padding"
+           android:padding="@dimen/layout_padding"
+           >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/spinner_thickness_textview"
+               android:paddingRight="@dimen/text_padding"
+              />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/line_color_textview"
+               android:paddingRight="@dimen/text_padding"
+              />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/keys_textview"
+               />
+       </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_padding"
+        android:orientation="horizontal"
+        android:padding="@dimen/layout_padding">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/thicknessSpinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/layout_padding" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/text_padding">
+
+            <RadioButton
+                android:id="@+id/redLineColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/red_radio_btn"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/greenLineColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/green_radio_btn"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/yellowLineColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yellow_radio_btn"></RadioButton>
+        </RadioGroup>
+         <!-->Layout for arrow keys starts<-->
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="148dp"
+            android:layout_height="100dp">
+            <Button
+                android:id="@+id/leftArrowBtn"
+                android:layout_width="@dimen/button_dimen"
+                android:layout_height="@dimen/button_dimen"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/left_arrow"
+                android:onClick="Click"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rightArrowBtn"
+                app:layout_constraintEnd_toStartOf="@+id/rightArrowBtn"
+                app:layout_constraintHorizontal_bias="0.142"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/rightArrowBtn"
+                android:layout_width="@dimen/button_dimen"
+                android:layout_height="@dimen/button_dimen"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/right_arrow"
+                android:onClick="Click"
+                app:layout_constraintBottom_toTopOf="@+id/downArrowBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/leftArrowBtn"
+                app:layout_constraintTop_toBottomOf="@+id/upArrowBtn" />
+
+            <Button
+                android:id="@+id/downArrowBtn"
+                android:layout_width="@dimen/button_dimen"
+                android:layout_height="@dimen/button_dimen"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/down_arrow"
+                android:onClick="Click"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.37"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upArrowBtn"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/upArrowBtn"
+                android:layout_width="@dimen/button_dimen"
+                android:layout_height="@dimen/button_dimen"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/up_arrow"
+                android:onClick="Click"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.37"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+        <!-->Layout for arrow keys ends<-->
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/drawingCanvas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/imageview_description"
+        ></ImageView>
+
+</LinearLayout>
