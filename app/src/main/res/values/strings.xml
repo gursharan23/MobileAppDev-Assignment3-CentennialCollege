@@ -17,8 +17,8 @@
     <string name="keys_textview">Arrow Keys</string>
     <string name="imageview_description">This imageview is made for canvas use</string>
     <string name="clear_button">Clear</string>
-    <string name="input_x">X</string>
-    <string name="input_y">Y</string>
+    <string name="input_x">300</string>
+    <string name="input_y">300</string>
     <string-array name="thickness_array">
         <item>20</item>
         <item>40</item>

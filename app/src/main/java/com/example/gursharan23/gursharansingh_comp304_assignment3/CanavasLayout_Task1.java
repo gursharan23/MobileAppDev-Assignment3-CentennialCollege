@@ -3,7 +3,7 @@ package com.example.gursharan23.gursharansingh_comp304_assignment3;
 * Date : February 28, 2018
 * Author : Gursharan Singh
 * Description : This class handles all the events of the canvas layout activity
-* Version : 0.3 - Added onKeyDown method
+* Version : 0.3 - Added the edit text controls for startX and startY
 * GitHub Info: https://github.com/iamgursharan
  */
 
@@ -17,10 +17,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemSelectedListener {
@@ -30,16 +30,11 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
     ImageView canvasImageView;
     Bitmap bitmap;
     Canvas canvas;
-    // Declaring TextView
-    TextView inputX=findViewById(R.id.inputX);
-    String x= (String) inputX.getText();
-    TextView inputY=findViewById(R.id.inputY);
-    String y= (String) inputY.getText();
     // Declaring  coordinates of the line
-    int startX=Integer.parseInt(x);
-    int startY=Integer.parseInt(y);;
-    int endX=startX;
-    int endY=startY;
+    int startX;
+    int startY;
+    int endX;
+    int endY;
     // Declaring color value
     int color;
     // Declaring the thickness variable
@@ -71,9 +66,18 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+        // Setting coordinates starts
+         EditText X=findViewById(R.id.inputX);
+         String x= X.getText().toString();
+         startX=Integer.parseInt(x);
+         EditText Y=findViewById(R.id.inputY);
+         String y= Y.getText().toString();
+         startY=Integer.parseInt(y);
+       // Setting coordinates ends
+
     }
 
-    // This method draws line on the canvas. It accepts one paramenter- canvas(Canvas)
+    // This method draws line on the canvas. It accepts one parameter- canvas(Canvas)
     public void drawLine(Canvas canvas)
     {
         canvas.drawLine(startX,startY,endX,endY,paint);
@@ -95,19 +99,19 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
 
         switch(view.getId()) {
             case R.id.leftArrowBtn:
-                endX=endX-5;
+                endX=endX-10;
                 drawLine(canvas);
                 break;
             case R.id.rightArrowBtn:
-                endX=endX+5;
+                endX=endX+10;
                 drawLine(canvas);
                 break;
             case R.id.upArrowBtn:
-                endY=endY-5;
+                endY=endY-10;
                 drawLine(canvas);
                 break;
             case R.id.downArrowBtn:
-                endY=endY+5;
+                endY=endY+10;
                 drawLine(canvas);
                 break;
         }
@@ -168,6 +172,7 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
             canvas.drawColor(Color.BLACK);
         }
     }
+
     // This method handles the keystrokes for drawing line on the canvas
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {

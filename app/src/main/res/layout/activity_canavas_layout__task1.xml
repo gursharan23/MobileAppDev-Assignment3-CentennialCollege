@@ -160,7 +160,7 @@
             android:id="@+id/inputX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/input_x"
+            android:text="@string/input_x"
             android:layout_toLeftOf="@id/inputY"
             android:padding="20dp" />
         <EditText
@@ -168,7 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:hint="@string/input_y"
+            android:text="@string/input_y"
             android:padding="20dp"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
