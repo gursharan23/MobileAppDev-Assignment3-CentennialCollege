@@ -16,6 +16,9 @@
     <string name="yellow_radio_btn">Yellow</string>
     <string name="keys_textview">Arrow Keys</string>
     <string name="imageview_description">This imageview is made for canvas use</string>
+    <string name="clear_button">Clear</string>
+    <string name="input_x">X</string>
+    <string name="input_y">Y</string>
     <string-array name="thickness_array">
         <item>20</item>
         <item>40</item>

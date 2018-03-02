@@ -54,22 +54,25 @@
             android:paddingRight="@dimen/text_padding">
 
             <RadioButton
-                android:id="@+id/redLineColor"
+                android:id="@+id/redLineRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/red_radio_btn"></RadioButton>
+                android:onClick="onRadioItemSelected"
+                android:text="@string/red_radio_btn"/>
 
             <RadioButton
-                android:id="@+id/greenLineColor"
+                android:id="@+id/greenLineRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/green_radio_btn"></RadioButton>
+                android:onClick="onRadioItemSelected"
+                android:text="@string/green_radio_btn"/>
 
             <RadioButton
-                android:id="@+id/yellowLineColor"
+                android:id="@+id/yellowLineRadioBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/yellow_radio_btn"></RadioButton>
+                android:onClick="onRadioItemSelected"
+                android:text="@string/yellow_radio_btn"/>
         </RadioGroup>
          <!-->Layout for arrow keys starts<-->
         <android.support.constraint.ConstraintLayout
@@ -97,7 +100,7 @@
                 android:layout_marginRight="32dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginVertical="@dimen/margin"
                 android:background="@drawable/right_arrow"
                 android:onClick="Click"
                 app:layout_constraintBottom_toTopOf="@+id/downArrowBtn"
@@ -138,13 +141,44 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
         <!-->Layout for arrow keys ends<-->
+
     </LinearLayout>
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="@dimen/layout_padding">
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:onClick="clearButtonClicked"
+            android:text="@string/clear_button"
+            android:layout_alignParentLeft="true"/>
+
+        <EditText
+            android:id="@+id/inputX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_x"
+            android:layout_toLeftOf="@id/inputY"
+            android:padding="20dp" />
+        <EditText
+            android:id="@+id/inputY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:hint="@string/input_y"
+            android:padding="20dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/drawingCanvas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:contentDescription="@string/imageview_description"
-        ></ImageView>
+        />
 
 </LinearLayout>

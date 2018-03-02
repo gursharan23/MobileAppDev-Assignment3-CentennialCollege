@@ -3,7 +3,7 @@ package com.example.gursharan23.gursharansingh_comp304_assignment3;
 * Date : February 28, 2018
 * Author : Gursharan Singh
 * Description : This class handles all the events of the canvas layout activity
-* Version : 0.2 - Added the onItemSelected for spinner
+* Version : 0.2 - Added onRadioItemSelected and clearButtonClicked method
 * GitHub Info: https://github.com/iamgursharan
  */
 
@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
     int startY=50;
     int endX=50;
     int endY=50;
+    // Declaring color value
+    int color;
     // Declaring the thickness variable
     int thickness;
 
@@ -43,8 +46,6 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
 
         // Instantiating canvas objects
         paint=new Paint();
-        paint.setColor(Color.RED);
-      //  paint.setStrokeWidth(thickness);
         bitmap=Bitmap.createBitmap((int)getWindowManager().getDefaultDisplay().getWidth(),
                 (int)getWindowManager().getDefaultDisplay().getHeight(),Bitmap.Config.ARGB_8888);
         canvas=new Canvas(bitmap);
@@ -121,6 +122,37 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
                 break;
         }
         paint.setStrokeWidth(thickness);
+    }
+
+    // This method sets the color of the paint object with respect to the radio button seleted
+    public void onRadioItemSelected(View view)
+    {
+        boolean checked= ((RadioButton)view).isChecked();
+        switch(view.getId())
+        {
+            case R.id.redLineRadioBtn:
+                if(checked)
+                    color=Color.RED;
+                break;
+            case R.id.yellowLineRadioBtn:
+                if(checked)
+                    color=Color.YELLOW;
+                break;
+            case R.id.greenLineRadioBtn:
+                if(checked)
+                    color=Color.GREEN;
+                break;
+        }
+        paint.setColor(color);
+    }
+
+    //This method clears the canvas
+    public void clearButtonClicked(View view)
+    {
+        if(view.isClickable())
+        {
+            canvas.drawColor(Color.BLACK);
+        }
     }
 
     @Override
