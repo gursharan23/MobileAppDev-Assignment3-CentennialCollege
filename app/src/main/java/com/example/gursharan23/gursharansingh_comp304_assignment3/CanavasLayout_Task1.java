@@ -3,7 +3,7 @@ package com.example.gursharan23.gursharansingh_comp304_assignment3;
 * Date : February 28, 2018
 * Author : Gursharan Singh
 * Description : This class handles all the events of the canvas layout activity
-* Version : 0.2 - Added onRadioItemSelected and clearButtonClicked method
+* Version : 0.3 - Added onKeyDown method
 * GitHub Info: https://github.com/iamgursharan
  */
 
@@ -13,12 +13,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemSelectedListener {
@@ -28,11 +30,16 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
     ImageView canvasImageView;
     Bitmap bitmap;
     Canvas canvas;
-    // Decalaring the position of the line
-    int startX=50;
-    int startY=50;
-    int endX=50;
-    int endY=50;
+    // Declaring TextView
+    TextView inputX=findViewById(R.id.inputX);
+    String x= (String) inputX.getText();
+    TextView inputY=findViewById(R.id.inputY);
+    String y= (String) inputY.getText();
+    // Declaring  coordinates of the line
+    int startX=Integer.parseInt(x);
+    int startY=Integer.parseInt(y);;
+    int endX=startX;
+    int endY=startY;
     // Declaring color value
     int color;
     // Declaring the thickness variable
@@ -74,6 +81,13 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
         startY=endY;
     }
 
+    // Overloaded method
+    public void drawLine(int keyCode,Canvas canvas)
+    {
+        canvas.drawLine(startX,startY,endX,endY,paint);
+        startX=endX;
+        startY=endY;
+    }
     //This method handles the click events of all the arrow buttons. It accepts one parameter -
     // view (View)
     public void Click(View view)
@@ -153,6 +167,30 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
         {
             canvas.drawColor(Color.BLACK);
         }
+    }
+    // This method handles the keystrokes for drawing line on the canvas
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        switch (keyCode)
+        {
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+            endX=endX-5;
+            drawLine(keyCode,canvas);
+            return true;
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                endX=endX+5;
+                drawLine(keyCode,canvas);
+                return true;
+            case KeyEvent.KEYCODE_DPAD_UP:
+                endY=endY-5;
+                drawLine(keyCode,canvas);
+                return true;
+            case KeyEvent.KEYCODE_DPAD_DOWN:
+                endY=endY+5;
+                drawLine(keyCode,canvas);
+                return true;
+        }
+        return false;
     }
 
     @Override
