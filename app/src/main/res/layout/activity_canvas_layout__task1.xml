@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gursharan23.gursharansingh_comp304_assignment3.CanavasLayout_Task1"
+    tools:context="com.example.gursharan23.gursharansingh_comp304_assignment3.CanvasLayout_Task1"
     android:orientation="vertical">
 
        <LinearLayout

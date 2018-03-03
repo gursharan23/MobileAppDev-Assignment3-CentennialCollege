@@ -7,6 +7,8 @@ package com.example.gursharan23.gursharansingh_comp304_assignment3;
 * GitHub Info: https://github.com/iamgursharan
  */
 
+//imported packages
+
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -23,7 +25,9 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemSelectedListener {
+public class CanvasLayout_Task1 extends Activity implements AdapterView.OnItemSelectedListener {
+
+    //Canvas Activity class begins
 
     //Declaring  canvas objects
     Paint paint;
@@ -44,7 +48,7 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_canavas_layout__task1);
+        setContentView(R.layout.activity_canvas_layout__task1);
 
         // Instantiating canvas objects
         paint=new Paint();
@@ -179,20 +183,24 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
         switch (keyCode)
         {
             case KeyEvent.KEYCODE_DPAD_LEFT:
-            endX=endX-5;
-            drawLine(keyCode,canvas);
-            return true;
+                 endX=endX-5;
+                 drawLine(keyCode,canvas);
+                 canvasImageView.invalidate();
+                 return true;
             case KeyEvent.KEYCODE_DPAD_RIGHT:
                 endX=endX+5;
                 drawLine(keyCode,canvas);
+                canvasImageView.invalidate();
                 return true;
             case KeyEvent.KEYCODE_DPAD_UP:
                 endY=endY-5;
                 drawLine(keyCode,canvas);
+                canvasImageView.invalidate();
                 return true;
             case KeyEvent.KEYCODE_DPAD_DOWN:
                 endY=endY+5;
                 drawLine(keyCode,canvas);
+                canvasImageView.invalidate();
                 return true;
         }
         return false;
@@ -202,4 +210,4 @@ public class CanavasLayout_Task1 extends Activity implements AdapterView.OnItemS
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-}
+} // Canvas activity class ends

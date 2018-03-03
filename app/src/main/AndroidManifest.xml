@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CanavasLayout_Task1"></activity>
+        <activity android:name=".CanvasLayout_Task1" />
+        <activity android:name=".FrameAnimation_Task2"></activity>
     </application>
 
 </manifest>

@@ -41,11 +41,11 @@ public class MainActivity extends ListActivity {
         {
             case 0:
                 Toast.makeText(this,"Task 1 selected",Toast.LENGTH_SHORT).show();
-                i=new Intent(this,CanavasLayout_Task1.class);
+                i=new Intent(this,CanvasLayout_Task1.class);
                 break;
             case 1:
                 Toast.makeText(this,"Task 2 selected",Toast.LENGTH_SHORT).show();
-       //         i=new Intent(this,Task2_Activity.class);
+                i=new Intent(this,FrameAnimation_Task2.class);
                 break;
             case 2:
                 Toast.makeText(this,"Task 3 selected",Toast.LENGTH_SHORT).show();
