@@ -5,7 +5,7 @@ Date: February 28th, 2018
 Author: Gursharan Singh
 ID: 300931676
 Description: This is the main activity class that handles the events for the ' main screen ' activity
-Version: 0.2 - Added the onListItemClick method to handle the click events for listview item
+Version: 0.3 - Added intent for task 2
 */
 
 import android.app.ListActivity;
