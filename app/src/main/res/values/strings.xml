@@ -8,7 +8,7 @@
         <item>Task 3</item>
     </string-array>
 
-    <!-->Task 1  strings used<-->
+    <!--> Task 1  strings used<-->
     <string name="spinner_thickness_textview">Line Thickness</string>
     <string name="line_color_textview">Line color</string>
     <string name="red_radio_btn">Red</string>
@@ -26,4 +26,8 @@
         <item>80</item>
         <item>100</item>
     </string-array>
+    <!--> Task 2 strings used <-->
+    <string name="duration_edittext">200</string>
+    <string name="duration_textview">Duration :</string>
+    <string name="animation_imageview_description">Imageview for animation</string>
 </resources>
