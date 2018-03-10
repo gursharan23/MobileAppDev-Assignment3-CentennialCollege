@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gursharan23.gursharansingh_comp304_assignment3.TweenActivity_Task3"
+    android:background="@android:color/background_dark"
+    >
+
+    <ImageView
+        android:id="@+id/earthImage"
+        android:layout_width="131dp"
+        android:layout_height="126dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/earth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sunImage"
+        android:layout_width="104dp"
+        android:layout_height="108dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/sun_1"
+        app:layout_constraintBottom_toTopOf="@+id/startButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/earthImage" />
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="93dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/start_button_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/stopButton"
+        app:layout_constraintEnd_toStartOf="@+id/stopButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="88dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/stop_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sunImage" />
+</android.support.constraint.ConstraintLayout>
