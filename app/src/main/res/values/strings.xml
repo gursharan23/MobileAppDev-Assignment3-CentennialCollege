@@ -33,4 +33,5 @@
     <!--> Task 3 strings used <-->
     <string name="start_button_text">Go</string>
     <string name="stop_button_text">End</string>
+    <string name="header_task_3_textview">Animation for earth\'s revolution</string>
 </resources>

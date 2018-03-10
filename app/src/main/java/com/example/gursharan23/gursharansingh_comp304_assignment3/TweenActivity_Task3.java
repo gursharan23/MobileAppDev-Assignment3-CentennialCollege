@@ -19,7 +19,7 @@ import android.widget.ImageView;
  Author: Gursharan Singh
  Description: This is the tween activity class that animates the two imageview objects
  animation drawable object
- Version: 0.1 - Added onClickListener for starting and stopping the animation
+ Version: 0.2 - Refactored tween activity class
  GitHub: https://github.com/iamgursharan
  */
 
@@ -43,31 +43,40 @@ public class TweenActivity_Task3 extends AppCompatActivity {
         final ImageView earth=findViewById(R.id.earthImage);
         final ImageView sun=findViewById(R.id.sunImage);
 
+        //Initializing the values to be used
+        final int duration=6000;
+        final int reduceEarthRadius=350;
+
+        // OnCLick Listener for start button
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
              //drawCircle only works with devices with greater than API21+
+
              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                  Path path = new Path();
-                 path.addCircle(sun.getX(), sun.getY(), (sun.getY()-320), Path.Direction.CCW);
+
+                 // calling addCircle method for defining the path
+                 path.addCircle(sun.getX(), sun.getY(), (sun.getY()-reduceEarthRadius),
+                         Path.Direction.CCW);
                  animator = ObjectAnimator.ofFloat(earth, View.X, View.Y, path);
-                 animatorSet=(AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(),R.animator.rotate);
-                 animator.setDuration(6000).setRepeatCount(Animation.INFINITE);
+                 animatorSet=(AnimatorSet) AnimatorInflater.loadAnimator(getApplicationContext(),
+                         R.animator.rotate); // loading the xml animation file
+                 // setting duration and animation loops
+                 animator.setDuration(duration).setRepeatCount(Animation.INFINITE);
                  playAnim=new AnimatorSet();
-                 animatorSet.setTarget(earth);
+                 animatorSet.setTarget(earth); // Assigning animation to the target object
                  playAnim.playTogether(animator,animatorSet);
-                 playAnim.start();
+                 playAnim.start(); // Starts animation
                 }
              }
         });
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             playAnim.end();
+             playAnim.end(); // Stops animation
             }
         });
-    }
-
-
-
-}
+    } //OnCreate method ends
+} // TweenActivity class ends
