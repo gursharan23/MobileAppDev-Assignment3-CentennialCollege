@@ -30,4 +30,7 @@
     <string name="duration_edittext">200</string>
     <string name="duration_textview">Duration :</string>
     <string name="animation_imageview_description">Imageview for animation</string>
+    <!--> Task 3 strings used <-->
+    <string name="start_button_text">Go</string>
+    <string name="stop_button_text">End</string>
 </resources>

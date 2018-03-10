@@ -57,15 +57,19 @@ public class CanvasLayout_Task1 extends Activity implements AdapterView.OnItemSe
         canvas=new Canvas(bitmap);
         canvasImageView=findViewById(R.id.drawingCanvas);
         canvasImageView.setImageBitmap(bitmap);
+
         // Setting the background color of canvas
         canvas.drawColor(Color.BLACK);
+
         // Declaring spinner
         Spinner spinner=findViewById(R.id.thicknessSpinner);
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,
                 R.array.thickness_array,
                 android.R.layout.simple_spinner_item);
+
         // Specify layout
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         //Applying adapter
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -77,9 +81,10 @@ public class CanvasLayout_Task1 extends Activity implements AdapterView.OnItemSe
          EditText Y=findViewById(R.id.inputY);
          String y= Y.getText().toString();
          startY=Integer.parseInt(y);
-       // Setting coordinates ends
-
-    }
+         endX=startX;
+         endY=startY;
+         // Setting coordinates ends
+ }
 
     // This method draws line on the canvas. It accepts one parameter- canvas(Canvas)
     public void drawLine(Canvas canvas)
@@ -96,6 +101,7 @@ public class CanvasLayout_Task1 extends Activity implements AdapterView.OnItemSe
         startX=endX;
         startY=endY;
     }
+
     //This method handles the click events of all the arrow buttons. It accepts one parameter -
     // view (View)
     public void Click(View view)

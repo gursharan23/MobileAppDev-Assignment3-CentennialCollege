@@ -49,7 +49,7 @@ public class MainActivity extends ListActivity {
                 break;
             case 2:
                 Toast.makeText(this,"Task 3 selected",Toast.LENGTH_SHORT).show();
-      //          i=new Intent(this,Task3_Activity.class);
+                i=new Intent(this,TweenActivity_Task3.class);
                 break;
         }
         startActivity(i);

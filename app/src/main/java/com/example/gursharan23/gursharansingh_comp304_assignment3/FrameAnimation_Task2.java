@@ -44,7 +44,6 @@ public class FrameAnimation_Task2 extends AppCompatActivity {
         BitmapDrawable frame9=(BitmapDrawable)getResources().getDrawable(R.drawable.frame9);
         BitmapDrawable frame10=(BitmapDrawable)getResources().getDrawable(R.drawable.frame10);
 
-
         frameAnimation.setOneShot(true);
         // Adding frames and duration
         frameAnimation.addFrame(frame1,setDuration());
